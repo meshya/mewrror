@@ -1,0 +1,21 @@
+services:
+  archlinux-update:
+    build: archlinux
+    restart: always
+    environment:
+      - MIRRORURL=rsync://mirror.de.leaseweb.net/archlinux/
+      - MIRRORDIR=/mirror
+    volumes:
+      - /mnt/mirror:/mirror
+
+  nginx:
+    build: nginx
+    restart: always
+    environment:
+      HOSTNAME: "127.0.0.1"
+      MIRRORDIR: "/mirror"
+    volumes:
+      - /mnt/mirror:/mirror
+
+#volumes:
+#  mirror-data:
