@@ -1,2 +1,6 @@
 # mewrror
-Archlinux and etc mirror in a devops like way
+My personal linux mirror
+
+## Countains
+- Archlinux
+- Debian (planned)
